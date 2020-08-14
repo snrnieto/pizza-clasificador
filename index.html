@@ -29,8 +29,10 @@
         const flip = true; // whether to flip the webcam
         webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
         await webcam.setup(
-            options: MediaTrackConstraints = {facingMode: { exact: "environment" }}
-        ) // request access to the webcam
+            options: {
+                MediaTrackConstraints = {facingMode: { exact: "environment" }}
+            }
+        );// request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
 
